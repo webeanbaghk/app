@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1.0,user-scalable=no,viewport-fit=cover"
+        />
+        <title>BeanBag(员工版)</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                /* overflow: hidden; */
+                font-family: '黑体', 'Microsoft YaHei', 'Arial', 'sans-serif';
+                background-color: #ffffff;
+            }
+
+            .goApp {
+                min-height: 100%;
+                height: auto;
+                padding: 2rem 0 0;
+                text-align: center;
+
+                .content {
+                    width: 24.5rem;
+                    height: auto;
+                    position: relative;
+                    margin-top: 0.9375rem;
+                    margin: 0 auto;
+                    .bg {
+                        width: 24.5rem;
+                        height: auto;
+                        box-sizing: border-box;
+                        position: absolute;
+                        top: 0;
+                        left: calc(50% - 12.25rem);
+                        z-index: 20;
+                    }
+                    .bean {
+                        position: absolute;
+                        top: 0;
+                        left: 6.25rem;
+                        width: 4.875rem;
+                        height: 6.25rem;
+                        z-index: 30;
+                    }
+                    .bag {
+                        position: absolute;
+                        top: 0;
+                        right: 2.5rem;
+                        width: 14.375rem;
+                        height: 9.375rem;
+                        z-index: 10;
+                    }
+                    .hand {
+                        position: absolute;
+                        top: 0;
+                        right: 2.1875rem;
+                        width: 14.375rem;
+                        height: 9.375rem;
+                        z-index: 40;
+                    }
+                    #toApp {
+                        box-sizing: border-box;
+                        z-index: 99;
+                        position: absolute;
+                        top: 26.875rem;
+                        left: 50%;
+                        margin-left: -7rem;
+                        width: 14rem;
+                        height: 3rem;
+                        /* Radius/radius-2 */
+                        border-radius: 0.5rem;
+                        opacity: 1;
+
+                        /* 自动布局 */
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0.75rem 2rem;
+
+                        /* Text&Icon/Font6-文字链接 */
+                        background: #2da1ff;
+
+                        /* Text&Icon/Font5-次强调-副标题 */
+                        font-family: PingFang SC;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        line-height: 1.5rem;
+                        text-align: center;
+                        letter-spacing: 0em;
+
+                        font-variation-settings: 'opsz' auto;
+                        /* Gray 中性/White1 */
+                        color: #ffffff;
+                    }
+                }
+
+                .info {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 1rem;
+                    margin-bottom: 1.875rem;
+                    p {
+                        font-family: PingFang SC;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        line-height: 2rem;
+                        text-align: center;
+                        letter-spacing: 0em;
+
+                        /* Text&Icon/Font6-强调-主标题 */
+                        /* 样式描述：标题、主要信息 */
+                        color: #0f121e;
+                    }
+                    span {
+                        display: block;
+                        margin-top: 0.5rem;
+                        opacity: 0.7;
+
+                        /* 二级文字/常规-16 */
+                        font-family: PingFang SC;
+                        font-size: 1rem;
+                        font-weight: normal;
+                        line-height: 1.5rem;
+                        text-align: center;
+                        letter-spacing: 0em;
+
+                        font-variation-settings: 'opsz' auto;
+                        /* Text&Icon/Font6-强调-主标题 */
+                        /* 样式描述：标题、主要信息 */
+                        color: #0f121e;
+                    }
+                }
+                .bd_drop {
+                    display: none;
+                    opacity: 0.9;
+                    background: #192134;
+                    text-align: center;
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 998;
+
+                    .download_tip {
+                        position: absolute;
+                        width: 4.375rem;
+                        height: 5.375rem;
+                        top: 1.25rem;
+                        right: 1.25rem;
+                    }
+
+                    .tip_text {
+                        position: absolute;
+                        top: 100px;
+                        right: 6.25rem;
+                        font-family: PingFang SC;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        line-height: 1.5rem;
+                        text-align: center;
+                        letter-spacing: 0em;
+                        font-variation-settings: 'opsz' auto;
+                        /* Gray 中性/White1 */
+                        color: #ffffff;
+                        text-align: left;
+                        display: inline-block;
+                    }
+                }
+            }
+            @media (min-width: 600px) {
+                .goApp {
+                    min-height: 100%;
+                    height: auto;
+                    padding: 5px 0 0;
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="goApp">
+            <div class="info">
+                <!-- <p>查看元豆零钱</p> -->
+                <p>前往 BeanBag APP</p>
+                <span>畅游数字世界 开启无限精彩</span>
+            </div>
+            <div class="content">
+                <img class="bg" src="./app-iPhone.png" alt="" />
+                <img class="bean" src="./bean.gif" alt="" />
+                <img class="bag" src="./bag.gif" alt="" />
+                <img class="hand" src="./app-hand.png" alt="" />
+                <!-- <div class="toApp" @click="getWXConfig" v-if="toAppSuccess">开启 BeanBag 之旅</div> -->
+                <div id="toApp">下载 BeanBag</div>
+            </div>
+            <div class="bd_drop">
+                <img class="download_tip" src="./arrow.png" />
+                <p class="tip_text">点击右上角“...”，在浏览器中打开</p>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var html = document.getElementsByTagName('html')[0];
+            var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+            html.style.fontSize = (oWidth / 375) * 16 + 'px';
+            let u = navigator.userAgent;
+            let isiOS = false;
+            let isAndroid = false;
+            // 是否是ios终端
+            if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+                isiOS = true;
+            }
+            // 是否是Android终端
+            if (u.indexOf('Android') > -1 || u.indexOf('Adr') > -1) {
+                console.log('安卓手机');
+                isAndroid = true;
+                console.log(isAndroid);
+            }
+            console.log(u);
+            document.querySelector('#toApp').addEventListener('click', function () {
+                // 是否在微信里面
+                if (
+                    navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == 'micromessenger'
+                ) {
+                    document.querySelector('.bd_drop').style.display = 'block';
+                }
+                // let u = navigator.userAgent
+                // 是否是Android终端
+                // let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1 // Android终端
+                // 是否是ios终端
+                // let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+                if (isAndroid) {
+                    window.location.href =
+                        'https://occ.webankcdn.net/wbbc-cdnps/beanbag/BeanBag_latest.apk';
+                }
+                if (isiOS) {
+                    window.location =
+                        'https://apps.apple.com/app/beanbag%E5%91%98%E5%B7%A5%E7%89%88/id6483943674';
+                }
+            });
+        </script>
+    </body>
+</html>
